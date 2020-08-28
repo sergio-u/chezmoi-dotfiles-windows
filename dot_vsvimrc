@@ -1,0 +1,88 @@
+"" General config
+""set nocompatible
+""filetype off                  
+
+set autoindent
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+
+set clipboard=unnamed
+
+
+set nostartofline
+
+let mapleader=" "
+
+"ignore files in the build folder
+"set wildignore+=*\\build\\*,*\\bin\\*,*\\build_win_clang\\* " for windows
+"set wildignore+=*/build/*,*/bin/*,*/build_win_clang/* " for linux
+
+
+" CTRL-A is Select all
+"noremap <C-A> gggH<C-O>G
+"inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+"cnoremap <C-A> <C-C>gggH<C-O>G
+"onoremap <C-A> <C-C>gggH<C-O>G
+"snoremap <C-A> <C-C>gggH<C-O>G
+"xnoremap <C-A> <C-C>ggVG
+
+"" Visual Studio
+nnoremap <leader>ve :e ~/.vsvimrc<CR>
+nnoremap <leader>vr :source ~/.vsvimrc<CR>
+
+set vsvim_useeditordefaults
+
+map gi :vsc Edit.GoToImplementation<CR>
+map gr :vsc Edit.FindAllReferences<CR>
+map gp :vsc Edit.PeekDefinition<CR>
+
+" Tab navigation
+nnoremap <leader>bn :vsc Window.NextTab<CR>
+nnoremap <leader>bp :vsc Window.PreviousTab<CR>
+
+" Pane Navigation
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+"Show stuff
+nnoremap <leader>se :vsc View.ErrorList<cr>
+nnoremap <leader>so :vsc View.Output<cr>
+nnoremap <leader>ss :vsc View.ViewCode<cr>
+nnoremap <leader>sc :vsc View.CommandWindow<cr>
+nnoremap <leader>c :vsc Window.CloseToolWindow<cr>
+
+" Code navigation
+nnoremap <leader>pf :vsc Window.SolutionExplorerSearch<cr>
+nnoremap <leader>ft :vsc Edit.FindinFiles<cr>
+nnoremap <leader>wf :vsc Window.WindowSearch<cr>
+nnoremap <leader>pn :vsc View.SolutionExplorer<cr>
+
+" break out of the tyranny of text! Navigate by method
+nnoremap <leader>m :vsc Edit.NextMethod<cr>
+nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
+
+" jump between compilation errors
+nnoremap <leader>e :vsc View.NextError<cr>
+nnoremap <leader>E :vsc View.PreviousError<cr>
+
+" 'omnibox'
+nnoremap <leader><leader> :vsc Window.QuickLaunch<cr>
+nnoremap <leader>a :vsc View.QuickActions<cr>
+
+" Code manipulation
+vnoremap gcc :vsc Edit.CommentSelection<cr>
+nnoremap gcc :vsc Edit.CommentSelection<cr>
+nnoremap <leader>fm :vsc Edit.FormatDocument<CR>
+nnoremap <leader>rr :vsc Refactor.Rename<cr>
+nnoremap <leader>fc :vsc CodeMaid.CleanupActiveDocument<cr>
+
+" Debug
+nnoremap <leader>di :vsc Debug.StepInto<cr>
+nnoremap <leader>ds :vsc Debug.Start<cr>
+nnoremap <leader>dr :vsc Debug.Restart<cr>
+nnoremap <leader>dt :vsc Debug.ToggleBreakpoint<cr>

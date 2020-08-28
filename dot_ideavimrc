@@ -1,0 +1,76 @@
+""" General configuration
+
+let mapleader = " "
+
+set ignorecase
+set smartcase
+
+""" Emulated Plugins
+
+set surround
+
+""" 
+set easymotion
+
+" Use Idea to join lines smartly
+set ideajoin
+
+" Copy to system clipboard as well
+set clipboard+=unnamed
+
+" Multiple cursors support
+set multiple-cursors
+
+set commentary
+
+set argtextobj
+
+""" Plugin configuration
+
+let g:argtextobj_pairs="(:),{:},<:>"
+
+"""  Vim bindings
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+
+
+""" Idea shortcuts
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+nmap <leader>' :action ActivateTerminalToolWindow<CR>
+
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+nmap <leader>? :action GotoAction<CR>
+nmap <leader>pf :action GotoFile<cr>
+
+nmap gu :action ShowUsages<CR>
+nmap gi :action GotoImplementation<CR>
+nmap gs :action GotoSuperMethod<CR>
+
+nmap <leader>n :action GotoNextError<CR>
+
+nmap <leader>gb :action CommentByBlockComment<CR>
+nmap <leader>gl :action CommentByLineComment<CR>
+noremap gcc :action CommentByLineComment<CR>
+noremap gcb :action CommentByBlockComment<CR>
+
+nmap <leader>bn :action NextTab<CR>
+nmap <leader>bp :action PreviousTab<CR>
+
+nmap <leader>l :action NextTab<CR>
+nmap <leader>h :action PreviousTab<CR>
+ 
+nmap <leader>rr :action RenameElement<CR>
+nmap <leader>rg :action Generate<CR>
+
+nmap <leader>rf :action ReformatCode<CR>
+
